@@ -5,15 +5,8 @@ import * as dashboardActions from "./dashboardActions";
 
 class Dashboard extends Component {
   componentDidMount() {
-    setTimeout(() => {
-      this.props.dispatch(dashboardActions.getUser({
-          firstName: 'Harper',
-          lastName: 'Perez'
-        }
-      ))
-    }, 3000)
+    this.props.dispatch(dashboardActions.getUser());
   }
-
 
   render() {
     const {dashboard: {user}} = this.props;
