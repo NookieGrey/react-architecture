@@ -1,3 +1,5 @@
+import {push} from "react-router-redux";
+
 import * as loginActionTypes from "./loginActionTypes";
 
 export const login = () => (dispatch, getState) => {
@@ -18,7 +20,8 @@ export const login = () => (dispatch, getState) => {
       payload: {
         token: "secret token"
       }
-    })
+    });
+    dispatch(push("/dashboard"));
   } else {
     alert("wrong username or password")
   }
