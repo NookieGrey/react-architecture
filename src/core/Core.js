@@ -3,11 +3,12 @@ import {Provider} from "react-redux";
 
 import {store} from "../utils/store";
 
-import Dashboard from "../dashboard/Dashboard";
+import Login from "../login/Login";
 
 const Core = () => (
   <Provider store={store} /*redux*/>
-    <Dashboard/>
+    <Login/>
   </Provider>
 );
+
 export default Core;
