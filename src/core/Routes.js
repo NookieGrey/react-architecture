@@ -3,7 +3,7 @@ import React from 'react';
 import {Redirect, Route, Switch} from "react-router-dom";
 
 import Login from "../login/Login";
-import Dashboard from "../dashboard/Dashboard";
+import PrivateRoutes from "./PrivateRoutes";
 
 const Routes = () => (
   <Switch>
@@ -13,9 +13,8 @@ const Routes = () => (
       component={Login}
     />
     <Route
-      exact
-      path='/dashboard'
-      component={Dashboard}
+      path='/private'
+      component={PrivateRoutes}
     />
     <Route
       exact

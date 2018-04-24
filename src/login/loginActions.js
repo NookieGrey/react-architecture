@@ -21,8 +21,12 @@ export const login = () => (dispatch, getState) => {
         token: "secret token"
       }
     });
-    dispatch(push("/dashboard"));
+    dispatch(push("/private/dashboard"));
   } else {
     alert("wrong username or password")
   }
 };
+
+export const logout = () => ({
+  type: loginActionTypes.LOGOUT,
+})

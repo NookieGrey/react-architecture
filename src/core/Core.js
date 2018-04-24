@@ -4,11 +4,14 @@ import {ConnectedRouter} from 'react-router-redux';
 
 import {store, history} from "../utils/store";
 import Routes from "./Routes";
+import RouterFlowControl from "./RouterFlowControl";
 
 const Core = () => (
   <Provider store={store} /*redux*/>
     <ConnectedRouter history={history} /*router*/>
-      <Routes/>
+      <RouterFlowControl  /*auth*/>
+        <Routes/>
+      </RouterFlowControl>
     </ConnectedRouter>
   </Provider>
 );

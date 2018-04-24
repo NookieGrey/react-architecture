@@ -10,6 +10,9 @@ const reducers = {
   [loginActionTypes.LOGIN](state, {payload}) {
     state.token = payload.token;
   },
+  [loginActionTypes.LOGOUT](state) {
+    state.token = null;
+  },
 };
 
 export default createReducer(initialState, reducers);
