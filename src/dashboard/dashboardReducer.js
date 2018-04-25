@@ -12,3 +12,4 @@ const reducers = {
 };
 
 export default createReducer(initialState, reducers);
+export const name = "dashboard";

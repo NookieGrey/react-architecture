@@ -8,7 +8,6 @@ import loggerMiddleware from 'redux-logger';
 
 import { reducer as formReducer } from 'redux-form';
 
-import dashboard from "../dashboard/dashboardReducer";
 import login from "../login/loginReducer";
 import loader from "../loader/loaderReducer";
 
@@ -16,13 +15,7 @@ export const history = createHistory();
 const routeMiddleware = routerMiddleware(history);
 
 export const store = createStore(
-  combineReducers({
-    form: formReducer,
-    router: routerReducer,
-    loader,
-    dashboard,
-    login,
-  }),
+  createRootReducer(),
   applyMiddleware(
     apiMiddleware,
     thunkMiddleware,
@@ -30,3 +23,24 @@ export const store = createStore(
     loggerMiddleware,
   )
 );
+
+function createRootReducer(reducers) {
+  return combineReducers({
+    form: formReducer,
+    router: routerReducer,
+    loader,
+    login,
+    ...reducers
+  });
+}
+
+const asyncReducers = {};
+
+export function registerReducer(name, reducer) {
+  if (asyncReducers.hasOwnProperty(name)) return;
+
+  if (!name || !reducer) return;
+
+  asyncReducers[name] = reducer;
+  store.replaceReducer(createRootReducer(asyncReducers));
+}

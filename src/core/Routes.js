@@ -2,19 +2,18 @@ import React from 'react';
 
 import {Redirect, Route, Switch} from "react-router-dom";
 
-import Login from "../login/Login";
-import PrivateRoutes from "./PrivateRoutes";
+import {getSingleComponent} from "../utils/lazyLoading";
 
 const Routes = () => (
   <Switch>
     <Route
       exact
       path='/login'
-      component={Login}
+      component={getSingleComponent(() => import(/* webpackChunkName: "Login" */ '../login/Login'))}
     />
     <Route
       path='/private'
-      component={PrivateRoutes}
+      component={getSingleComponent(() => import(/* webpackChunkName: "PrivateRoutes" */ './PrivateRoutes'))}
     />
     <Route
       exact

@@ -1,8 +1,8 @@
 import React from 'react';
 
 import {Switch, Route, Redirect} from 'react-router-dom';
-import Dashboard from "../dashboard/Dashboard";
 import PrivateLayout from "./PrivateLayout";
+import {getComponentWithReducer} from "../utils/lazyLoading";
 
 class PrivateRoutes extends React.Component {
   render() {
@@ -14,7 +14,10 @@ class PrivateRoutes extends React.Component {
           <Route
             exact
             path={`${url}/dashboard`}
-            component={Dashboard}
+            component={getComponentWithReducer({
+              Component: () => import(/* webpackChunkName: "Dashboard" */ "../dashboard/Dashboard"),
+              reducer: () => import(/* webpackChunkName: "dashboardReducer" */ "../dashboard/dashboardReducer"),
+            })}
           />
           <Redirect exact from={url} to={`${url}/dashboard`}/>
           <Redirect to="/404"/>
