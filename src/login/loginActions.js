@@ -1,6 +1,9 @@
 import {push} from "react-router-redux";
+import {authStore} from '../utils/AuthStore';
 
 import * as loginActionTypes from "./loginActionTypes";
+
+import * as loginApi from "./loginApi";
 
 export const login = () => (dispatch, getState) => {
   const {
@@ -14,19 +17,32 @@ export const login = () => (dispatch, getState) => {
     }
   } = getState();
 
-  if (username === "admin" && password === "password") {
-    dispatch({
-      type: loginActionTypes.LOGIN,
-      payload: {
-        token: "secret token"
-      }
+  dispatch({
+    api: loginApi.login,
+    types: [
+      loginActionTypes.LOGIN_REQUEST,
+      loginActionTypes.LOGIN_SUCCESS,
+      loginActionTypes.LOGIN_ERROR,
+    ],
+    request: {
+      email: username,
+      password,
+      returnSecureToken: true,
+    }
+  })
+    .then(({response}) => {
+      authStore.setToken(response.idToken);
+      dispatch(push("/private/dashboard"));
+    })
+    .catch(() => {
+      authStore.setToken(null);
     });
-    dispatch(push("/private/dashboard"));
-  } else {
-    alert("wrong username or password")
-  }
 };
 
-export const logout = () => ({
-  type: loginActionTypes.LOGOUT,
-})
+export const logout = () => (dispatch) => {
+  authStore.setToken(null);
+
+  dispatch({
+    type: loginActionTypes.LOGOUT,
+  })
+};

@@ -1,15 +1,14 @@
 import * as dashboardActionTypes from "./dashboardActionTypes";
 
-export const getUser = () => (dispatch, getState) => {
-  const response = {
-    firstName: 'Harper',
-    lastName: 'Perez'
-  };
+import * as dashboardApi from "./dashboardApi";
 
-  setTimeout(() => {
-    dispatch({
-      type: dashboardActionTypes.DASHBOARD_GET_USER,
-      payload: response
-    })
-  }, 3000);
+export const getUser = () => (dispatch) => {
+  dispatch({
+    api: dashboardApi.getInfo,
+    types: [
+      dashboardActionTypes.DASHBOARD_GET_USER_INFO_REQUEST,
+      dashboardActionTypes.DASHBOARD_GET_USER_INFO_SUCCESS,
+      dashboardActionTypes.DASHBOARD_GET_USER_INFO_ERROR,
+    ]
+  })
 };

@@ -5,7 +5,9 @@
   "dependencies": {
     "@acemarke/redux-starter-kit": "0.0.6",
     "antd": "3.4.3",
+    "axios": "0.18.0",
     "history": "4.7.2",
+    "nprogress": "0.2.0",
     "react": "16.3.2",
     "react-dom": "16.3.2",
     "react-redux": "5.0.7",

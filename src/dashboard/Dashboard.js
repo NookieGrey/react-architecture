@@ -13,7 +13,12 @@ class Dashboard extends Component {
 
     return (
       <div>
-        hello, {user.firstName} {user.lastName}
+        <div>
+          hello, {user.email}
+        </div>
+        <div>
+          last login time {user.lastLoginAt && new Date(+user.lastLoginAt).toString()}
+        </div>
       </div>
     );
   }

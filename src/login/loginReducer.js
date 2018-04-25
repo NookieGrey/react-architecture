@@ -7,8 +7,11 @@ const initialState = {
 };
 
 const reducers = {
-  [loginActionTypes.LOGIN](state, {payload}) {
-    state.token = payload.token;
+  [loginActionTypes.LOGIN_SUCCESS](state, {response}) {
+    state.token = response.idToken;
+  },
+  [loginActionTypes.LOGIN_ERROR](state) {
+    state.token = null;
   },
   [loginActionTypes.LOGOUT](state) {
     state.token = null;

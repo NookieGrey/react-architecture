@@ -6,20 +6,9 @@ const initialState = {
 };
 
 const reducers = {
-  [dashboardActionTypes.DASHBOARD_GET_USER](state, {payload}) {
-    state.user = payload;
+  [dashboardActionTypes.DASHBOARD_GET_USER_INFO_SUCCESS](state, {response}) {
+    state.user = response.users[0];
   },
 };
 
 export default createReducer(initialState, reducers);
-
-export const reduxDefaultReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case dashboardActionTypes.DASHBOARD_GET_USER:
-      return Object.assign({}, state, {
-        user: action.payload
-      });
-    default:
-      return state
-  }
-};
