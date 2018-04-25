@@ -8,7 +8,7 @@ import ReduxInput from "../widgets/reduxFormComponents/ReduxInput";
 
 import * as loginActions from "./loginActions";
 
-import "./login-form.css"
+import "../core/simple-page.css"
 
 const formItemLayout = {
   labelCol: {span: 4},
@@ -20,10 +20,10 @@ class Login extends Component {
     const {handleSubmit} = this.props;
 
     return (
-      <div className="login-form-page">
+      <div className="simple-page-page">
         <Form
           onSubmit={handleSubmit(() => this.props.dispatch(loginActions.login()))}
-          className="login-form"
+          className="simple-page"
         >
           <Field
             name="username"
