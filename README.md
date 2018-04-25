@@ -1,6 +1,6 @@
 This is an example of the React Application architecture, on the basis of which the business applications are built in [DataSite Technology Company](https://datasite.uz/)
 
-##What includes
+## What includes
 
 0.This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
