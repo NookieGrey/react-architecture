@@ -1,25 +1,47 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
-import { Field, reduxForm } from 'redux-form';
+
+import {Field, reduxForm} from 'redux-form';
+import {Button, Form} from "antd";
+
+import ReduxInput from "../widgets/reduxFormComponents/ReduxInput";
 
 import * as loginActions from "./loginActions";
+
+import "./login-form.css"
+
+const formItemLayout = {
+  labelCol: {span: 4},
+  wrapperCol: {span: 14},
+};
 
 class Login extends Component {
   render() {
     const {handleSubmit} = this.props;
 
     return (
-      <form onSubmit={handleSubmit(() => this.props.dispatch(loginActions.login()))}>
-        <div>
-          <label htmlFor="username">Username</label>
-          <Field name="username" component="input" type="text" />
-        </div>
-        <div>
-          <label htmlFor="password">Password</label>
-          <Field name="password" component="input" type="password" />
-        </div>
-        <button type="submit">Submit</button>
-      </form>
+      <div className="login-form-page">
+        <Form
+          onSubmit={handleSubmit(() => this.props.dispatch(loginActions.login()))}
+          className="login-form"
+        >
+          <Field
+            name="username"
+            component={ReduxInput}
+            label="Username"
+            type="text"
+            FormItemProps={formItemLayout}
+          />
+          <Field
+            name="password"
+            component={ReduxInput}
+            label="Password"
+            type="password"
+            FormItemProps={formItemLayout}
+          />
+          <Button htmlType="submit" type="primary">Submit</Button>
+        </Form>
+      </div>
     );
   }
 }

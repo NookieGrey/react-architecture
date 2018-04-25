@@ -21,7 +21,7 @@ const Routes = () => (
       path='/404'
       component={() => "404 page not found"}
     />
-    <Redirect exact from='/' to='/login'/>
+    <Redirect exact from='/' to='/private/dashboard'/>
     <Redirect to="/404"/>
   </Switch>
 );

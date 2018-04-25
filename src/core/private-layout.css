@@ -1,0 +1,38 @@
+.private-layout-page {
+  height: 100vh;
+}
+
+.ant-layout-header.private-layout-header {
+  background: #fff;
+  padding: 0;
+}
+
+.private-layout-content {
+  margin: 24px 16px;
+  padding: 24px;
+  background: #fff;
+  min-height: 280px;
+}
+
+.private-layout-page .trigger {
+  font-size: 18px;
+  line-height: 64px;
+  padding: 0 24px;
+  cursor: pointer;
+  transition: color .3s;
+}
+
+.private-layout-page .trigger:hover {
+  color: #1890ff;
+}
+
+.private-layout-page .logo {
+  height: 32px;
+  background: rgba(255, 255, 255, .2);
+  margin: 16px;
+}
+
+.private-layout-logout {
+  float: right;
+  margin-right: 20px;
+}
