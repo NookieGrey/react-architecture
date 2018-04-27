@@ -10,7 +10,7 @@ import ErrorBoundary from "./error/ErrorBoundary";
 
 import enUS from 'antd/lib/locale-provider/en_US';
 
-import "antd/dist/antd.min.css";
+import "test.less";
 
 const Core = () => (
   <Provider store={store} /*redux*/>
