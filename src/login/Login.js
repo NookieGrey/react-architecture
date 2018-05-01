@@ -8,7 +8,7 @@ import ReduxInput from "../widgets/reduxFormComponents/ReduxInput";
 
 import * as loginActions from "./loginActions";
 
-import "../core/simple-page.css"
+import "../core/simple-page.less"
 
 const formItemLayout = {
   labelCol: {span: 4},

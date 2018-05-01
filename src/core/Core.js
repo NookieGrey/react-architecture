@@ -10,8 +10,6 @@ import ErrorBoundary from "./error/ErrorBoundary";
 
 import enUS from 'antd/lib/locale-provider/en_US';
 
-import "test.less";
-
 const Core = () => (
   <Provider store={store} /*redux*/>
     <ConnectedRouter history={history} /*router*/>

@@ -8,7 +8,7 @@ import ReduxInput from "../../widgets/reduxFormComponents/ReduxInput";
 
 import * as errorSubmitAction from "./errorSubmitActions";
 
-import "../simple-page.css"
+import "../simple-page.less"
 
 class ErrorSubmitForm extends React.Component {
   render() {

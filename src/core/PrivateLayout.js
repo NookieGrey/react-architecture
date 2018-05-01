@@ -7,7 +7,7 @@ import {Icon, Layout, Menu} from "antd";
 
 import * as loginActions from "../login/loginActions";
 
-import "./private-layout.css";
+import "./private-layout.less";
 
 const {Header, Sider, Content} = Layout;
 
