@@ -14,14 +14,19 @@ import loader from "../loader/loaderReducer";
 export const history = createHistory();
 const routeMiddleware = routerMiddleware(history);
 
-export const store = createStore(
-  createRootReducer(),
-  applyMiddleware(
+const middlewares = [
     apiMiddleware,
     thunkMiddleware,
     routeMiddleware,
-    loggerMiddleware,
-  )
+];
+
+if (process.env.NODE_ENV === "development") {
+  middlewares.push(loggerMiddleware);
+}
+
+export const store = createStore(
+  createRootReducer(),
+  applyMiddleware(...middlewares),
 );
 
 function createRootReducer(reducers) {
