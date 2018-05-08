@@ -17,3 +17,6 @@ This is an example of the React Application architecture, on the basis of which 
 6.[react-loadable](https://github.com/jamiebuilds/react-loadable) - lazy loading components
 
 7.handling react render errors with componentDidCatch
+
+### Step by step presentation
+[On russian](https://drive.google.com/file/d/1igQ81rxLrPmuREGYKrZISTB6Jk7P9xro/view?usp=sharing)
