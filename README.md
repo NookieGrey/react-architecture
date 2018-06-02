@@ -14,7 +14,7 @@ This is an example of the React Application architecture, on the basis of which 
 
 5.[axios](https://github.com/axios/axios) - http client with apiMiddleware for simple api calls
 
-6.[react-loadable](https://github.com/jamiebuilds/react-loadable) - lazy loading components
+6.lazy loading
 
 7.handling react render errors with componentDidCatch
 

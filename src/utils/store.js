@@ -8,8 +8,8 @@ import loggerMiddleware from 'redux-logger';
 
 import { reducer as formReducer } from 'redux-form';
 
-import login from "../login/loginReducer";
-import loader from "../loader/loaderReducer";
+import login from "../pages/login/loginReducer";
+import loader from "../core/loader/loaderReducer";
 
 export const history = createHistory();
 const routeMiddleware = routerMiddleware(history);

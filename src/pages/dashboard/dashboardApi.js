@@ -1,4 +1,4 @@
-import http from "../utils/httpClient";
+import http from "../../utils/httpClient";
 
 export const getInfo = (data) => {
   return http({

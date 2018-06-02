@@ -1,8 +1,6 @@
 import React from 'react';
 
-import {getSingleComponent} from "../../utils/lazyLoading";
-
-const ErrorHandler = getSingleComponent(() => import(/* webpackChunkName: "ErrorSubmitForm" */ './ErrorSubmitForm'));
+import ErrorSubmitForm from "./ErrorSubmitForm";
 
 export default class ErrorBoundary extends React.Component {
   state = {
@@ -30,7 +28,7 @@ export default class ErrorBoundary extends React.Component {
   render() {
     if (this.state.hasError) {
       return (
-        <ErrorHandler
+        <ErrorSubmitForm
           error={this.state.error}
           info={this.state.info}
           processError={this.processError}

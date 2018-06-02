@@ -4,11 +4,11 @@ import {connect} from "react-redux";
 import {Field, reduxForm} from 'redux-form';
 import {Button, Form} from "antd";
 
-import ReduxInput from "../widgets/reduxFormComponents/ReduxInput";
+import ReduxInput from "../../widgets/reduxFormComponents/ReduxInput";
 
 import * as loginActions from "./loginActions";
 
-import "../core/simple-page.less"
+import "../../core/simple-page.less"
 
 const formItemLayout = {
   labelCol: {span: 4},

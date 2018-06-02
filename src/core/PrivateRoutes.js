@@ -2,11 +2,11 @@ import React from 'react';
 
 import {Switch, Route, Redirect} from 'react-router-dom';
 import PrivateLayout from "./PrivateLayout";
-import {getComponentWithReducer} from "../utils/lazyLoading";
+import {getComponentWithReducer} from "../utils/loading/lazyLoading";
 
 const Dashboard = getComponentWithReducer({
-  Component: () => import(/* webpackChunkName: "Dashboard" */ "../dashboard/Dashboard"),
-  reducer: () => import(/* webpackChunkName: "dashboardReducer" */ "../dashboard/dashboardReducer"),
+  Component: () => import(/* webpackChunkName: "Dashboard" */ "../pages/dashboard/Dashboard"),
+  reducer: () => import(/* webpackChunkName: "dashboardReducer" */ "../pages/dashboard/dashboardReducer"),
 });
 
 class PrivateRoutes extends React.Component {

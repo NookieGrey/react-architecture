@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 
 import {Icon, Layout, Menu} from "antd";
 
-import * as loginActions from "../login/loginActions";
+import * as loginActions from "../pages/login/loginActions";
 
 import "./private-layout.less";
 

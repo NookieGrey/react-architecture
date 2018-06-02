@@ -2,9 +2,9 @@ import React from 'react';
 
 import {Redirect, Route, Switch} from "react-router-dom";
 
-import {getSingleComponent} from "../utils/lazyLoading";
+import {getSingleComponent} from "../utils/loading/lazyLoading";
 
-const Login = getSingleComponent(() => import(/* webpackChunkName: "Login" */ '../login/Login'));
+const Login = getSingleComponent(() => import(/* webpackChunkName: "Login" */ '../pages/login/Login'));
 const PrivateRoutes = getSingleComponent(() => import(/* webpackChunkName: "PrivateRoutes" */ './PrivateRoutes'));
 
 const Routes = () => (

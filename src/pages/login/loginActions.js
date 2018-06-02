@@ -1,5 +1,5 @@
 import {push} from "react-router-redux";
-import {authStore} from '../utils/AuthStore';
+import {authStore} from '../../utils/AuthStore';
 
 import * as loginActionTypes from "./loginActionTypes";
 

@@ -1,6 +1,6 @@
 import {notification} from 'antd';
 
-import * as loaderActions from "../loader/loaderActions";
+import * as loaderActions from "../core/loader/loaderActions";
 
 const apiMiddleware = ({dispatch}) => next => action => {
   if (!action.api || !action.types) {
