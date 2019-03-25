@@ -1,10 +1,6 @@
-const { injectBabelPlugin } = require('react-app-rewired');
-const rewireLess = require('react-app-rewire-less');
+const {override, addLessLoader, fixBabelImports} = require("customize-cra");
 
-module.exports = function override(config, env) {
-
-  config = rewireLess(config, env);
-  config = injectBabelPlugin(['import', { libraryName: 'antd', libraryDirectory: 'es', style: "css" }], config);
-
-  return config;
-};
+module.exports = override(
+  addLessLoader(),
+  fixBabelImports("import", {libraryName: 'antd', libraryDirectory: 'es', style: "css"})
+);
