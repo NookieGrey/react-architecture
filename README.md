@@ -1,3 +1,7 @@
+This is an old repo, actually [here - MyAdmin](https://github.com/NookieGrey/MyAdmin)
+
+____
+
 This is an example of the React Application architecture, on the basis of which the business applications are built in [DataSite Technology Company](https://datasite.uz/)
 
 ## What includes
